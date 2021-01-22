@@ -7,6 +7,10 @@ const btns = document.querySelectorAll('.btn')
 
 btns.forEach( btn => {
     btn.addEventListener('click', (e) => {
-        console.log(e.currentTarget.classList)
+       const styles = e.currentTarget.classList
+       if (styles.contains('decrease')) { //contains only applies to DOM nodes, includes for arrays
+        count--
+       }
+       value.textContent = count
     })
 })
